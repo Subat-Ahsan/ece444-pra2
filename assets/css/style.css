@@ -497,6 +497,13 @@ a.hoverline:hover {
   display: table-cell;
 }
 
+#places h4 {
+  margin: 0px;
+  font-size: large;
+  padding: 0px;
+  font-weight: bold;
+}
+
 .card.large .card-content p {
   color: inherit;
   margin: 0;
@@ -667,6 +674,8 @@ small {
     top: initial;
   }
 }
+
+
 
 @media (max-width: 600px) {
   h2 {
