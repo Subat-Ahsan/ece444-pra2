@@ -1,3 +1,91 @@
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+
+:root {
+  /* Misc */
+  --color-transparent: transparent;
+
+  /* Surfaces: elements that were literal "white" panels/bars (nav bg, button bg) */
+  --color-surface: #ffffff;
+  /* Foreground sitting on top of accent-colored elements (icon circles, filled buttons) */
+  --color-text-on-accent: #ffffff;
+
+  /* Brand / accent */
+  --color-primary: #2563a8;
+  --color-primary-alpha-40: rgba(37, 99, 168, 0.4);
+  --color-link: #174a7e;
+  --color-underline: #24305e;
+
+  /* Text */
+  --color-text-body: #333;
+  --color-text-muted: #666;
+  --color-text-blockquote: #4b5563;
+
+  /* Backgrounds */
+  --color-bg-main: #f5f6f7;
+  --color-bg-dots: #d5d8dc;
+  --color-bg-logo: #fafafa;
+  --color-bg-intro: #dbeafe;
+  --color-bg-card-action: rgba(0, 0, 0, 0.02);
+
+  /* Borders */
+  --color-border-light: #ddd;
+
+  /* Overlays / shadows */
+  --color-overlay-40: rgba(0, 0, 0, 0.4);
+  --color-shadow-50: rgba(0, 0, 0, 0.5);
+  --color-waves-ripple: rgba(33, 150, 243, 0.2);
+
+  /* Social icons (each named for the brand it represents, not its literal color) */
+  --color-github: #000000;
+  --color-linkedin: #0077b5;
+  --color-angellist: grey;
+
+  /* Buttons */
+  --color-btn-primary-bg: #1976d2;
+  --color-btn-primary-hover-bg: #1565c0;
+  --color-btn-shadow: rgba(0, 0, 0, 0.2);
+  --color-btn-disabled-bg: #b0b7bf;
+  --color-btn-disabled-text: #e9ecef;
+}
+
+:root[data-theme="dark"] {
+  --color-github: #e5e7eb;
+  --color-transparent: transparent;
+
+  --color-surface: #1e1f23;
+  --color-text-on-accent: #f5f5f5;
+
+  --color-primary: #4a90d9;
+  --color-primary-alpha-40: rgba(74, 144, 217, 0.4);
+  --color-link: #7db3ea;
+  --color-underline: #7c93c9;
+
+  --color-text-body: #e5e7eb;
+  --color-text-muted: #9ca3af;
+  --color-text-blockquote: #9aa5b1;
+
+  --color-bg-main: #121417;
+  --color-bg-dots: #24272b;
+  --color-bg-logo: #1c1e22;
+  --color-bg-intro: #1e2a3a;
+  --color-bg-card-action: rgba(255, 255, 255, 0.04);
+
+  --color-border-light: #33383f;
+
+  --color-overlay-40: rgba(0, 0, 0, 0.5);
+  --color-shadow-50: rgba(0, 0, 0, 0.6);
+  --color-waves-ripple: rgba(33, 150, 243, 0.25);
+
+  --color-linkedin: #2ba3e0;
+  --color-angellist: #b0b0b0;
+
+  --color-btn-primary-bg: #2f7dd1;
+  --color-btn-primary-hover-bg: #4a90d9;
+  --color-btn-shadow: rgba(0, 0, 0, 0.4);
+  --color-btn-disabled-bg: #4b5563;
+  --color-btn-disabled-text: #9ca3af;
+}
+
 .profile-pic {
   position: relative;
   max-width:130px;
@@ -11,7 +99,7 @@
   /* background-size: cover;  */
   margin: -31px; 
   margin-left:-7px;
-  border: 6px solid rgba(37, 99, 168, 0.4); 
+  border: 6px solid var(--color-primary-alpha-40); 
   border-radius: 50% !important;
 }
 
@@ -28,7 +116,6 @@
   right: 0;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Poiret+One);
 .social {
   margin: 0 auto;
   width: auto;
@@ -41,7 +128,7 @@
   width: 50px;
   height: 50px;
   border: 0;
-  color: #FFFFFF;
+  color: var(--color-text-on-accent);
   cursor: pointer;
   font-size: 30px;
   line-height: 70px;
@@ -51,32 +138,32 @@
 }
 
 .github {
-  color: black;
+  color: var(--color-github);
 }
 
 .linkedin {
-  color: #0077b5;
+  color: var(--color-linkedin);
 }
 
 .angellist {
-  color: grey;
+  color: var(--color-angellist);
 }
 
 .icon-btn:hover {
   transform: scale(1.10);
-  color: #FFFFFF;
+  color: var(--color-text-on-accent);
 }
 
 .linkedin:hover {
-  background-color: #0077b5;
+  background-color: var(--color-linkedin);
 }
 
 .angellist:hover {
-  background-color: grey;
+  background-color: var(--color-angellist);
 }
 
 .github:hover {
-  background-color: black;
+  background-color: var(--color-github);
 }
 
 /* Buttons - Read Me, Contact Us */
@@ -84,9 +171,9 @@
 .readme {
   position: relative;
   padding: 11px 35px;
-  background: #fff;
-  color: #2563a8;
-  border: 2px solid #fff;
+  background: var(--color-surface);
+  color: var(--color-primary);
+  border: 2px solid var(--color-surface);
   font-weight: 600;
   font-size: 15px;
   letter-spacing: 1px;
@@ -104,8 +191,8 @@
   position: relative;
   padding: 11px 35px;
   background: none;
-  color: #fff;
-  border: 2px solid #fff;
+  color: var(--color-text-on-accent);
+  border: 2px solid var(--color-text-on-accent);
   font-weight: 600;
   font-size: 15px;
   letter-spacing: 1px;
@@ -116,15 +203,15 @@
 }
 
 .contactme:hover{
-  color: #2563a8;
-  background-color: white;
+  color: var(--color-primary);
+  background-color: var(--color-surface);
 }
 /* main body */
 
 /* body-color */
 
 body {
-  color: #333;
+  color: var(--color-text-body);
   font-size: 18px;
 }
 
@@ -140,7 +227,7 @@ body {
 } */
 
 a {
-  color: #174a7e;
+  color: var(--color-link);
 }
 
 /* main blockqoute */
@@ -155,8 +242,8 @@ a {
 } */
 
 blockquote {
-  border-left: 5px solid #4b5563;
-  color: #4b5563;
+  border-left: 5px solid var(--color-text-blockquote);
+  color: var(--color-text-blockquote);
   font-size: 125%;
   font-weight: 400;
   margin: 20px 0;
@@ -175,7 +262,7 @@ blockquote * {
 /* main nav */
 
 nav {
-  background: white;
+  background: var(--color-surface);
   box-shadow: none;
   height: 0;
 }
@@ -200,8 +287,8 @@ nav i {
 } */
 
 main {
-  background-color: #f5f6f7;
-  background-image: radial-gradient(#d5d8dc 1px, transparent 1px);
+  background-color: var(--color-bg-main);
+  background-image: radial-gradient(var(--color-bg-dots) 1px, transparent 1px);
   background-size: 20px 20px;
   padding-left: 190px;
 }
@@ -239,7 +326,7 @@ ul.side-nav li {
 
 ul.side-nav.fixed a {
   box-sizing: content-box;
-  color: #2563a8;
+  color: var(--color-primary);
   display: block;
   line-height: 100%;
   padding: 10px 0 12px;
@@ -259,8 +346,8 @@ ul.table-of-contents li.logo a.active, ul.table-of-contents li.logo a:hover {
 } */
 
 ul.side-nav.fixed li.logo {
-  background-color: #fafafa;
-  border-bottom: 1px solid #ddd;
+  background-color: var(--color-bg-logo);
+  border-bottom: 1px solid var(--color-border-light);
   box-sizing: content-box;
   min-height: 90px;
   padding: 30px 30px 40px;
@@ -272,12 +359,12 @@ ul.side-nav.fixed li.logo a {
 }
 
 ul.table-of-contents li:not(.logo) a.active, ul.table-of-contents li:not(.logo) a:hover {
-  background-color: #fafafa;
+  background-color: var(--color-bg-logo);
   border-left: 3px solid;
 }
 
 ul.side-nav.fixed.table-of-contents li:not(.logo) a span, ul#slide-out li:not(.logo) a span {
-  color: #333 !important;
+  color: var(--color-text-body) !important;
 }
 
 li.logo span {
@@ -322,12 +409,12 @@ h3 {
 } */
 
 #intro.section {
-  background: #dbeafe repeat;
+  background: var(--color-bg-intro) repeat;
   position: relative;
 }
 
 #intro.section .container {
-  color: white;
+  color: var(--color-text-on-accent);
   font-weight: 200;
   left: 0;
   position: absolute;
@@ -346,11 +433,11 @@ h3 {
   /* font-weight: 400; */
   line-height: 150%;
   /* padding: 0 0px; */
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 5px var(--color-shadow-50);
 }
 
 #intro.section .underline {
-  border-bottom: 5px solid #24305e;
+  border-bottom: 5px solid var(--color-underline);
 }
 
 #intro.section .teal {
@@ -358,7 +445,7 @@ h3 {
 }
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: var(--color-overlay-40);
   height: 100%;
   left: 0;
   position: absolute;
@@ -369,7 +456,7 @@ h3 {
 .waves-effect.waves-blue .waves-ripple {
   /* The alpha value allows the text and background color
    of the button to still show through. */
-  background-color: rgba(33, 150, 243, 0.2);
+  background-color: var(--color-waves-ripple);
 }
 
 .card {
@@ -385,12 +472,12 @@ h3 {
 
 .card li a {
   margin-right: 0;
-  color: #333;
-  border-bottom: 2px solid #2563a8;
+  color: var(--color-text-body);
+  border-bottom: 2px solid var(--color-primary);
 }
 
 .card li a:hover {
-  color: #333;
+  color: var(--color-text-body);
   font-weight: 500;
 }
 
@@ -416,7 +503,7 @@ h3 {
 }
 
 #experience .card-action {
-  background-color: rgba(0, 0, 0, 0.02);
+  background-color: var(--color-bg-card-action);
   border: none;
 }
 
@@ -430,7 +517,7 @@ h3 {
 
 .card-action span {
   font-size: 85%;
-  color: #666;
+  color: var(--color-text-muted);
 }
 
 .card ul {
@@ -444,7 +531,7 @@ h3 {
 }
 
 .card ul li li {
-  color: #666;
+  color: var(--color-text-muted);
   font-size: 13px;
 }
 
@@ -461,7 +548,7 @@ h3 {
 }
 
 a.hoverline {
-  border-bottom: 3px solid transparent !important;
+  border-bottom: 3px solid var(--color-transparent) !important;
   padding: 3px 3px 0 3px;
   transition: 0.25s all;
   -moz-transition: 0.25s all;
@@ -475,7 +562,7 @@ a.hoverline {
 } */
 
 a.hoverline:hover {
-  border-bottom: 3px solid #174a7e !important;
+  border-bottom: 3px solid var(--color-link) !important;
 }
 
 #skills .card.large {
@@ -483,7 +570,7 @@ a.hoverline:hover {
 }
 
 #skills h4 {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--color-border-light);
   margin-bottom: 30px;
   padding-bottom: 20px;
 }
@@ -505,8 +592,8 @@ a.hoverline:hover {
 }
 
 #renderProjectsButton {
-  background-color: #1976d2;
-  color: #fff;
+  background-color: var(--color-btn-primary-bg);
+  color: var(--color-text-on-accent);
   border: none;
   border-radius: 6px;
   padding: 10px 20px;
@@ -517,13 +604,13 @@ a.hoverline:hover {
 }
 
 #renderProjectsButton:hover:not(:disabled) {
-  background-color: #1565c0;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  background-color: var(--color-btn-primary-hover-bg);
+  box-shadow: 0 3px 8px var(--color-btn-shadow);
 }
 
 #renderProjectsButton:disabled {
-  background-color: #b0b7bf;
-  color: #e9ecef;
+  background-color: var(--color-btn-disabled-bg);
+  color: var(--color-btn-disabled-text);
   cursor: not-allowed;
   box-shadow: none;
 }
@@ -535,7 +622,7 @@ a.hoverline:hover {
 }
 
 #experience .card-content .row {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--color-border-light);
   padding-bottom: 10px;
 }
 
@@ -576,17 +663,17 @@ small {
 }
 
 .grey-text {
-  color: #666 !important;
+  color: var(--color-text-muted) !important;
 }
 
 /* main .teal-text */
 
 .nav-text {
-  color: #2563a8 !important;
+  color: var(--color-primary) !important;
 }
 
 .brand-text {
-  color: #2563a8 !important;
+  color: var(--color-primary) !important;
 }
 
 /* .teal-text {
@@ -596,16 +683,16 @@ small {
 /* .teal */
 
 .accent-bg {
-  background-color: #2563a8 !important;
+  background-color: var(--color-primary) !important;
 }
 
 .section-title {
-  color: #fff !important;
-  background-color: #2563a8 !important;
+  color: var(--color-text-on-accent) !important;
+  background-color: var(--color-primary) !important;
 }
 
 .accent-link {
-  color: #2563a8 !important;
+  color: var(--color-primary) !important;
 }
 
 /* .teal {
@@ -643,12 +730,12 @@ small {
     width: 100%;
   }
   nav {
-    background: #fff;
+    background: var(--color-surface);
     height: 64px;
     position: absolute;
   }
   nav a.button-collapse, nav a.button-collapse i {
-    color: #2563a8;
+    color: var(--color-primary);
     height: 56px;
     line-height: 56px;
   }

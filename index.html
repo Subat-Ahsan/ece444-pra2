@@ -123,7 +123,14 @@
         <a aria-label="Open Subat's resume in a new tab" href="assets/resume/subat_resume.pdf" target="_blank"
         class="waves-effect waves-dark nav-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a>  
       </li>
+      <li>
+        <label>
+          <input type="checkbox" id="darkModeToggle" onchange="toggleMode()">
+          Toggle Dark Mode
+        </label>
+      </li>
     </ul>
+    
   </nav>
 
   <!-- Nav class 2 -->
@@ -175,6 +182,7 @@
           class="waves-effect waves-dark nav-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a>
       </li>
     </ul>
+    <input type="checkbox" id="darkModeToggle" onchange="toggleMode()">
   </nav>
 
   <!-- Main Content-->
@@ -548,6 +556,16 @@
         closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
       })
     })
+  </script>
+  <script>
+    function toggleMode() {
+      const checkbox = document.getElementById("darkModeToggle");
+      if (checkbox.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+      }
+    }
   </script>
   <script>
     const projectsData = [
