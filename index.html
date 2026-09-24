@@ -292,106 +292,8 @@
     <section id="projects" class="section scrollspy">
       <h3 class="page-title section-title">Projects</h3>
       <div class="container">
-        <div class="row">
-
-          <!-- Pokémon Showdown Teams -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Pokemon Showdown Teams app" src="assets/img/react_graphic.png" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator accent-link hoverline">Pokémon Showdown Teams<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  A full-stack app for storing and sharing Pokémon Showdown teams
-                </p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Tools:</b> React.js, Express.js, MongoDB, Mongoose, JWT</li>
-                  <li>Built a RESTful API with Express.js to handle authentication, team uploads, and data retrieval.</li>
-                  <li>Developed a responsive React.js frontend with dynamic routing and seamless UI.</li>
-                  <li>Implemented user creation and secure user authentication using JWT tokens.</li>
-                  <li>Integrated MongoDB with Mongoose to efficiently store and retrieve user profiles and team data.</li>
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit the GitHub repo for Pokémon Showdown Teams" href="https://github.com/subatahsan"
-                    target="_blank" data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- City Mapping Software -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="City Mapping Software" src="assets/img/city_mapping.png" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator accent-link hoverline">City Mapping Software<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  Mapping software built with C++, GTK, and OpenStreetMap's API
-                </p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title nav-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Tools:</b> C++, GTK, OpenStreetMap API, Git</li>
-                  <li>Collaborated with a team of 3 to develop mapping software using C++, GTK and OpenStreetMap's API.</li>
-                  <li>Created a graphical program that efficiently draws city maps using advanced rendering techniques.</li>
-                  <li>Applied object-oriented programming to manage map data, rendering, and user interaction.</li>
-                  <li>Implemented and fine-tuned algorithms such as Dijkstra's, A*, and Nearest Neighbor with Simulated Annealing to power efficient route-finding functionality.</li>
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit the GitHub repo for City Mapping Software" href="https://github.com/subatahsan"
-                    target="_blank" data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- OS/161 Operating System Implementation -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="OS/161 Operating System Implementation" src="assets/img/os161.png" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator accent-link hoverline">OS/161 Operating System Implementation<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  Core operating system components implemented in C and Assembly
-                </p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title brown-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Tools:</b> C, Assembly, System/161</li>
-                  <li>Collaborated with a teammate to implement core operating system components such as locks, system calls and semaphores using C and Assembly on System/161 machine simulator.</li>
-                  <li>Debugged code by tracing kernel-level issues through low-level logs, stack traces, and memory analysis.</li>
-                  <li>Greatly improved ability to comprehend, navigate and modify large and robust codebases.</li>
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit the GitHub repo for OS/161 Operating System Implementation" href="https://github.com/subatahsan"
-                    target="_blank" data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
+        <button id="renderProjectsButton" onclick="renderAllProjects()">Show All Projects</button>
+        <div id="projectsRow" class="row">
         </div>
       </div>
     </section>
@@ -642,6 +544,187 @@
         closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
       })
     })
+  </script>
+  <script>
+    const projectsData = [
+      {
+        title: "Pokémon Showdown Teams",
+        image: "assets/img/react_graphic.png",
+        imageAlt: "Pokemon Showdown Teams app",
+        description: "A full-stack app for storing and sharing Pokémon Showdown teams",
+        tools: "React.js, Express.js, MongoDB, Mongoose, JWT",
+        accomplishments: [
+          "Built a RESTful API with Express.js to handle authentication, team uploads, and data retrieval.",
+          "Developed a responsive React.js frontend with dynamic routing and seamless UI.",
+          "Implemented user creation and secure user authentication using JWT tokens.",
+          "Integrated MongoDB with Mongoose to efficiently store and retrieve user profiles and team data."
+        ],
+        githubUrl: "https://github.com/subatahsan"
+      },
+      {
+        title: "City Mapping Software",
+        image: "assets/img/city_mapping.png",
+        imageAlt: "City Mapping Software",
+        description: "Mapping software built with C++, GTK, and OpenStreetMap's API",
+        tools: "C++, GTK, OpenStreetMap API, Git",
+        accomplishments: [
+          "Collaborated with a team of 3 to develop mapping software using C++, GTK and OpenStreetMap's API.",
+          "Created a graphical program that efficiently draws city maps using advanced rendering techniques.",
+          "Applied object-oriented programming to manage map data, rendering, and user interaction.",
+          "Implemented and fine-tuned algorithms such as Dijkstra's, A*, and Nearest Neighbor with Simulated Annealing to power efficient route-finding functionality."
+        ],
+        githubUrl: "https://github.com/subatahsan"
+      },
+      {
+        title: "OS/161 Operating System Implementation",
+        image: "assets/img/os161.png",
+        imageAlt: "OS/161 Operating System Implementation",
+        description: "Core operating system components implemented in C and Assembly",
+        tools: "C, Assembly, System/161",
+        accomplishments: [
+          "Collaborated with a teammate to implement core operating system components such as locks, system calls and semaphores using C and Assembly on System/161 machine simulator.",
+          "Debugged code by tracing kernel-level issues through low-level logs, stack traces, and memory analysis.",
+          "Greatly improved ability to comprehend, navigate and modify large and robust codebases."
+        ],
+        githubUrl: "https://github.com/subatahsan"
+      },
+      {
+        title: "Recipe Sharing Platform",
+        image: "assets/img/sample_project.png",
+        imageAlt: "Recipe Sharing Platform",
+        description: "A community-driven web app for discovering and sharing recipes",
+        tools: "Vue.js, Node.js, PostgreSQL, Docker",
+        accomplishments: [
+          "Designed a normalized PostgreSQL schema to support recipes, ingredients, and user ratings.",
+          "Built a Vue.js frontend with search, filtering, and favoriting functionality.",
+          "Containerized the app with Docker for consistent local development and deployment.",
+          "Implemented image upload and storage handling for user-submitted recipe photos."
+        ],
+        githubUrl: "https://github.com/subatahsan"
+      },
+      {
+        title: "Personal Finance Tracker",
+        image: "assets/img/sample_project.png",
+        imageAlt: "Personal Finance Tracker",
+        description: "A budgeting app that visualizes spending habits over time",
+        tools: "Python, Flask, SQLite, Chart.js",
+        accomplishments: [
+          "Built a Flask backend to categorize and store transaction data from CSV imports.",
+          "Created interactive Chart.js dashboards to visualize monthly spending trends.",
+          "Implemented budget goal tracking with alerts for overspending in a category.",
+          "Wrote unit tests covering core transaction parsing and categorization logic."
+        ],
+        githubUrl: "https://github.com/subatahsan"
+      },
+      {
+        title: "Real-Time Chat Application",
+        image: "assets/img/sample_project.png",
+        imageAlt: "Real-Time Chat Application",
+        description: "A multi-room chat app with live messaging and presence indicators",
+        tools: "Socket.io, React.js, Redis, Express.js",
+        accomplishments: [
+          "Implemented real-time messaging using Socket.io with room-based broadcasting.",
+          "Used Redis to track online presence and manage session state across servers.",
+          "Built a React.js UI with typing indicators and message read receipts.",
+          "Optimized message delivery to handle high-frequency events without UI lag."
+        ],
+        githubUrl: "https://github.com/subatahsan"
+      },
+      {
+        title: "Weather Forecast Dashboard",
+        image: "assets/img/sample_project.png",
+        imageAlt: "Weather Forecast Dashboard",
+        description: "A dashboard aggregating multi-day weather forecasts for saved locations",
+        tools: "JavaScript, REST APIs, Leaflet.js, CSS Grid",
+        accomplishments: [
+          "Integrated a third-party weather API to fetch and cache multi-day forecasts.",
+          "Built an interactive Leaflet.js map for selecting and saving favorite locations.",
+          "Designed a responsive CSS Grid layout adapting to different screen sizes.",
+          "Implemented local caching to reduce redundant API calls and improve load times."
+        ],
+        githubUrl: "https://github.com/subatahsan"
+      },
+      {
+        title: "Task Management Tool",
+        image: "assets/img/sample_project.png",
+        imageAlt: "Task Management Tool",
+        description: "A Kanban-style task board for organizing personal and team projects",
+        tools: "TypeScript, React.js, Firebase, Tailwind CSS",
+        accomplishments: [
+          "Built drag-and-drop task boards using React.js with persistent Firebase storage.",
+          "Implemented real-time sync so board changes reflect instantly across collaborators.",
+          "Styled the interface with Tailwind CSS for a clean, responsive layout.",
+          "Added role-based permissions to restrict editing to assigned board members."
+        ],
+        githubUrl: "https://github.com/subatahsan"
+      }
+    ];
+    
+    function buildProjectCard(project) {
+      const col = document.createElement("div");
+      col.className = "col s12 m6 l4";
+    
+      const accomplishmentsHtml = project.accomplishments
+        .map((item) => `<li>${item}</li>`)
+        .join(" ");
+    
+      col.innerHTML = `
+        <div class="card medium">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img alt="${project.imageAlt || project.title}" src="${project.image}"
+              style="height: 100%; width: 100%" class="activator" />
+          </div>
+          <div class="card-content">
+            <span class="card-title activator accent-link hoverline">${project.title}<i
+                class="mdi-navigation-more-vert right"></i></span>
+            <p>
+              ${project.description}
+            </p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text"><small>Accomplishments</small><i
+                class="mdi-navigation-close right"></i></span>
+            <ul>
+              <li><b>Tools:</b> ${project.tools}</li>
+              ${accomplishmentsHtml}
+            </ul>
+            <div class="card-action">
+              <a aria-label="Visit the GitHub repo for ${project.title}" href="${project.githubUrl}"
+                target="_blank" data-position="top" data-tooltip="View Source"
+                class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
+                  class="fa fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+      `;
+    
+      return col;
+    }
+
+  function renderProjects(numProjects) {
+    const container = document.getElementById("projectsRow");
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    const projectsToRender = numProjects === -1
+      ? projectsData
+      : projectsData.slice(0, numProjects);
+
+    projectsToRender.forEach((project) => {
+      container.appendChild(buildProjectCard(project));
+    });
+  }
+
+  function renderAllProjects() {
+    renderProjects(-1);
+    const renderProjectsButton = document.getElementById("renderProjectsButton");
+    if (renderProjectsButton) {
+      renderProjectsButton.disabled = true;
+    }
+  }
+ 
+  renderProjects(2);
   </script>
 </body>
 

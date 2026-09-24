@@ -504,6 +504,30 @@ a.hoverline:hover {
   font-weight: bold;
 }
 
+#renderProjectsButton {
+  background-color: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+#renderProjectsButton:hover:not(:disabled) {
+  background-color: #1565c0;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+#renderProjectsButton:disabled {
+  background-color: #b0b7bf;
+  color: #e9ecef;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
 .card.large .card-content p {
   color: inherit;
   margin: 0;
