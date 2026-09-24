@@ -11,7 +11,7 @@
   /* background-size: cover;  */
   margin: -31px; 
   margin-left:-7px;
-  border: 6px solid rgba(0, 77, 64, 0.4); 
+  border: 6px solid rgba(37, 99, 168, 0.4); 
   border-radius: 50% !important;
 }
 
@@ -85,7 +85,7 @@
   position: relative;
   padding: 11px 35px;
   background: #fff;
-  color: #00796b;
+  color: #2563a8;
   border: 2px solid #fff;
   font-weight: 600;
   font-size: 15px;
@@ -97,7 +97,7 @@
 
 /* .readme:hover{
   color: white;
-  background-color: #00796b;
+  background-color: #2563a8;
 } */
 
 .contactme {
@@ -116,7 +116,7 @@
 }
 
 .contactme:hover{
-  color: #00796b;
+  color: #2563a8;
   background-color: white;
 }
 /* main body */
@@ -136,18 +136,18 @@ body {
 /* main a -- links */
 
 /* a {
-  color: #009688;
+  color: #2563a8;
 } */
 
 a {
-  color: #004d40;
+  color: #174a7e;
 }
 
 /* main blockqoute */
 
 /* blockquote {
-  border-left: 5px solid #795548;
-  color: #795548;
+  border-left: 5px solid #4b5563;
+  color: #4b5563;
   font-size: 125%;
   font-weight: 400;
   margin: 20px 0;
@@ -155,8 +155,8 @@ a {
 } */
 
 blockquote {
-  border-left: 5px solid #795548;
-  color: #795548;
+  border-left: 5px solid #4b5563;
+  color: #4b5563;
   font-size: 125%;
   font-weight: 400;
   margin: 20px 0;
@@ -200,7 +200,9 @@ nav i {
 } */
 
 main {
-  background: url(../../assets/img/bg.png) repeat;
+  background-color: #f5f6f7;
+  background-image: radial-gradient(#d5d8dc 1px, transparent 1px);
+  background-size: 20px 20px;
   padding-left: 190px;
 }
 
@@ -237,7 +239,7 @@ ul.side-nav li {
 
 ul.side-nav.fixed a {
   box-sizing: content-box;
-  color: rgb(16, 202, 56);
+  color: #2563a8;
   display: block;
   line-height: 100%;
   padding: 10px 0 12px;
@@ -320,7 +322,7 @@ h3 {
 } */
 
 #intro.section {
-  background: #a7ffeb repeat;
+  background: #dbeafe repeat;
   position: relative;
 }
 
@@ -384,7 +386,7 @@ h3 {
 .card li a {
   margin-right: 0;
   color: #333;
-  border-bottom: 2px solid #ffab40;
+  border-bottom: 2px solid #2563a8;
 }
 
 .card li a:hover {
@@ -473,7 +475,7 @@ a.hoverline {
 } */
 
 a.hoverline:hover {
-  border-bottom: 3px solid #004d40 !important;
+  border-bottom: 3px solid #174a7e !important;
 }
 
 #skills .card.large {
@@ -548,8 +550,12 @@ small {
 
 /* main .teal-text */
 
-.teal-text {
-  color: #008073 !important;
+.nav-text {
+  color: #2563a8 !important;
+}
+
+.brand-text {
+  color: #2563a8 !important;
 }
 
 /* .teal-text {
@@ -558,12 +564,21 @@ small {
 
 /* .teal */
 
-.teal {
-  background-color: #008073 !important;
+.accent-bg {
+  background-color: #2563a8 !important;
+}
+
+.section-title {
+  color: #fff !important;
+  background-color: #2563a8 !important;
+}
+
+.accent-link {
+  color: #2563a8 !important;
 }
 
 /* .teal {
-  background-color: #00695c !important;
+  background-color: #1d4f91 !important;
 } */
 
 @media (min-width: 1200px) {
@@ -602,7 +617,7 @@ small {
     position: absolute;
   }
   nav a.button-collapse, nav a.button-collapse i {
-    color: #009688;
+    color: #2563a8;
     height: 56px;
     line-height: 56px;
   }
