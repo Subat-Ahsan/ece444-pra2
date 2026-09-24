@@ -292,7 +292,11 @@
     <section id="projects" class="section scrollspy">
       <h3 class="page-title section-title">Projects</h3>
       <div class="container">
-        <button id="renderProjectsButton" onclick="renderAllProjects()">Show All Projects</button>
+        <div>
+          <input id="projectSearch" size="40" placeholder="Search keywords" oninput="searchProjects()">
+          <button id="renderProjectsButton" onclick="renderAllProjects()">Show All Projects</button>
+        </div>
+        
         <div id="projectsRow" class="row">
         </div>
       </div>
@@ -701,30 +705,48 @@
       return col;
     }
 
-  function renderProjects(numProjects) {
+  let projectsToRender = projectsData.slice(0, 2);
+
+  function renderProjects(projects) {
     const container = document.getElementById("projectsRow");
     if (!container) return;
 
     container.innerHTML = "";
 
-    const projectsToRender = numProjects === -1
-      ? projectsData
-      : projectsData.slice(0, numProjects);
-
-    projectsToRender.forEach((project) => {
+    projects.forEach((project) => {
       container.appendChild(buildProjectCard(project));
     });
   }
 
+  function searchProjects() {
+    const inputEl = document.getElementById("projectSearch");
+    const val = inputEl.value;
+    if (val === ""){
+      renderProjects(projectsToRender)
+    } else {
+      const loweredVal = val.toLowerCase();
+      
+      const filteredProjects = projectsData.filter( (project) => {
+        return project.title.toLowerCase().includes(loweredVal) || project.description.toLowerCase().includes(loweredVal) 
+        || project.tools.toLowerCase().includes(loweredVal);
+      })
+      renderProjects(filteredProjects)
+    }
+
+  }
+
   function renderAllProjects() {
-    renderProjects(-1);
+    projectsToRender = projectsData;
+    renderProjects(projectsToRender);
     const renderProjectsButton = document.getElementById("renderProjectsButton");
     if (renderProjectsButton) {
       renderProjectsButton.disabled = true;
     }
+    const inputEl = document.getElementById("projectSearch");
+    inputEl.value = "";
   }
  
-  renderProjects(2);
+  renderProjects(projectsToRender);
   </script>
 </body>
 
